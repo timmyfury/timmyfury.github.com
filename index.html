@@ -1,6 +1,22 @@
 ---
 layout: default
-title: Blast Off
+title: timmyfury
+summary: I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. I'm a dog. 
 ---
 
-<h1>Home Jawn</h1>
+<div class="section" id="list-of-posts">
+	<h3>A List of My Posts</h3>
+	<ul>
+	{% for post in site.posts %} 
+		<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+	{% endfor %}
+	</ul>
+</div>
+
+<div class="section" id="about-the-site">
+	<h3>About the site</h3>
+	<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
+	<p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.</p>
+	<p>This jawn was designed by the lovely and talented <a href="http://joshnittle.com/portfolio/">Josh Nittle</a></p>
+</div>
+
