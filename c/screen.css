@@ -1,0 +1,97 @@
+body {
+	background: #000;
+	color: #fff;
+	font: 62.5%/100% Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	text-align: center;
+}
+form,
+fieldset,
+img {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+a,
+a:visited {
+	color: #ffc;
+}
+h1 {
+	font: 100 3.6em/1.5 Klavika, Verdana, Arial, Helvetica, sans-serif;
+	margin: 0 0 0.8em;
+	padding: 0;
+	text-shadow: 0 0 0.7em rgba(255,255,204,0.75);
+}
+h2 {
+	font: 100 2.3em/1.5 Klavika, Verdana, Arial, Helvetica, sans-serif;
+	margin: 0 0 0.8em;
+	padding: 0;
+}
+h3 {
+	font: 1.8em/1.5 Klavika, Verdana, Arial, Helvetica, sans-serif;
+	margin: 0 0 0.8em;
+	padding: 0;
+	text-transform: uppercase;
+}
+p {
+	font: 100 1.2em/1.5 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0 0 0.8em;
+	padding: 0;
+}
+/************************************************************************
+	section
+************************************************************************/
+.section {
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: left;
+	width: 760px;
+}
+/************************************************************************
+	header
+************************************************************************/
+#header {
+	background: url('./i/bg-header.jpg') no-repeat center top;
+	min-height: 17em;
+	position: relative;
+}
+#header .section {
+	position: relative;
+	top: 50px;
+}
+/************************************************************************
+	summary
+************************************************************************/
+#summary {
+	background: url('./i/bg-summary.jpg') no-repeat center top;
+	padding: 2em 0 0.5em;
+}
+/************************************************************************
+	content
+************************************************************************/
+#content {
+	padding: 7em 0 0;
+	background: url('./i/bg-content.jpg') no-repeat center top;
+}
+#content .section {
+	margin-bottom: 4em;
+}
+#content .warning {
+	color: #000;
+	background: rgba(255,255,204,0.75);
+	-webkit-border-radius: 0.2em;
+	-moz-border-radius: 0.2em;
+	border-radius: 0.2em;
+	-webkit-box-shadow: 0 0 0.7em rgba(255,255,204,0.75);
+	-moz-box-shadow: 0 0 0.7em rgba(255,255,204,0.75);
+	box-shadow: 0 0 0.7em rgba(255,255,204,0.75);
+	padding: 10px;
+	width: 740px;
+}
+/************************************************************************
+	footer
+************************************************************************/
+#footer{
+	background: url('./i/bg-footer.jpg') no-repeat  center top;
+	padding: 7em 0 4em;
+}
