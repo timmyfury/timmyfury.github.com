@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+
+# ruby -r './_import/WordPressImporter.rb' -e 'Jekyll::WordPress.process("veryrawblog","poopmaster","pastameatball","db.timmyfury.com")'
+# mysql -u db_timmyfury -porgangrinder -h db.timmyfury.com veryrawblog
+
+help = <<HELP
+Jekyll Import needs a better description
+
+./_import/import -d veryrawblog -u poopmaster -p pastameatball -h db.timmyfury.com
+
+HELP
+
+require 'rubygems'
+require 'optparse'
+require 'jekyll'
+require './_import/wordpress_importer.rb'
+
+exec = {}
+options = {}
+opts = OptionParser.new do |opts|
+	opts.banner = help
+
+	opts.on("-c", "Run the converter") do
+		options['convert'] = true
+	end
+
+	opts.on("--converter", "Which converter to use (default converter wordpress)") do
+		options['converter'] = 'wordpress'
+	end
+	
+	opts.on("-u", "--user", "Database user") do |i|
+		options['db_user'] = i
+	end
+	
+	opts.on("-p", "--password", "Database password") do |i|
+		options['db_pass'] = i
+	end
+	
+	opts.on("-h", "--host", "Database host") do |i|
+		options['db_host'] = i
+	end
+	
+	opts.on("-d", "--database", "Database name") do |i|
+		options['db_user'] = i
+	end
+
+	opts.on("--version", "Display current version") do
+		puts "Jekyll " + Jekyll.version
+		exit 0
+	end
+end
+
+# Read command line options into `options` hash
+opts.parse!
+
+if options['db_user'] && options['db_pass'] && options['db_host'] && options['db_user']
+	Jekyll::WordPressImporter.process("veryrawblog","poopmaster","pastameatball","db.timmyfury.com")
+end
