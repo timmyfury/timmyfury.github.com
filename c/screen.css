@@ -58,7 +58,7 @@ p {
 	background-position: right top;
 	background-repeat: no-repeat;
 	margin: 0 auto;
-	max-width: 100em;
+	max-width: 160em;
 	overflow: hidden;
 	position: relative;
 	text-align: center;
@@ -117,10 +117,10 @@ p {
 @media screen and (max-width: 480px) {
 	#header,
 	#content,
-	#footer { background-position: -45em top; }
+	#footer { background-position: -73em top; }
 }
 @media screen and (max-width: 330px) {
 	#header,
 	#content,
-	#footer { background-position: -60em top; }
+	#footer { background-position: -88em top; }
 }
