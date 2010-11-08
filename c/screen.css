@@ -1,7 +1,7 @@
 body {
 	background: #000;
 	color: #fff;
-	font: 62.5%/100% Verdana, Arial, Helvetica, sans-serif;
+	font: 400 62.5%/100% Verdana, Arial, Helvetica, sans-serif;
 	margin: 0;
 	text-align: center;
 }
@@ -17,24 +17,24 @@ a:visited {
 	color: #ffc;
 }
 h1 {
-	font: 100 3.6em/1.5 Klavika, Verdana, Arial, Helvetica, sans-serif;
+	font: 3.6em/1.5 "klavika-web-1", Verdana, Arial, Helvetica, sans-serif;
 	margin: 0 0 0.8em;
 	padding: 0;
 	text-shadow: 0 0 0.7em rgba(255,255,204,0.75);
 }
 h2 {
-	font: 100 2.3em/1.5 Klavika, Verdana, Arial, Helvetica, sans-serif;
+	font: 2.3em/1.5 "klavika-web-1", Verdana, Arial, Helvetica, sans-serif;
 	margin: 0 0 0.8em;
 	padding: 0;
 }
 h3 {
-	font: 1.8em/1.5 Klavika, Verdana, Arial, Helvetica, sans-serif;
+	font: 1.8em/1.5 "klavika-web-1", Verdana, Arial, Helvetica, sans-serif;
 	margin: 0 0 0.8em;
 	padding: 0;
 	text-transform: uppercase;
 }
 p {
-	font: 100 1.2em/1.5 Verdana, Arial, Helvetica, sans-serif;
+	font: 1.2em/1.5 Verdana, Arial, Helvetica, sans-serif;
 	margin: 0 0 0.8em;
 	padding: 0;
 }
