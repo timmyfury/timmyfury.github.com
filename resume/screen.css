@@ -7,7 +7,7 @@ body {
 	font-size: 62.5%;
 	min-width: 320px;
 	text-align: center;
-/*	width: 290px;*/
+/*	width: 320px;*/
 }
 
 /*
@@ -37,7 +37,7 @@ h3 {
 	font-size: 2em;
 }
 h4 {
-	font-size: 1.6em;
+	font-size: 1.4em;
 }
 
 /*
@@ -48,7 +48,7 @@ section,
 footer {
 	margin: 20px auto;
 	max-width: 60em;
-	padding: 0 20px;
+	padding: 0 15px;
 	text-align: left;
 }
 
@@ -60,7 +60,7 @@ header img {
 	display: block;
 	float: left;
 	height: 200px;
-	margin-right: 20px;
+	margin: 0 20px 20px 0;
 	width: 200px;
 }
 header hgroup {
@@ -187,8 +187,41 @@ footer {
 **********************************************************************/
 @media screen and (max-width: 600px) {}
 
-@media screen and (max-width: 480px) {}
+@media screen and (max-width: 480px) {
+	header img {
+		display: block;
+		float: left;
+		height: 135px;
+		margin: 0 20px 20px 0;
+		width: 135px;
+	}
+	section dt {
+		clear: both;
+		padding-top: 1px;
+	}
+}
 
 @media screen and (max-width: 400px) {}
 
-@media screen and (max-width: 320px) {}
+@media screen and (max-width: 320px) {
+	header {
+		text-align: right;
+	}
+	header img {
+		display: block;
+		float: right;
+		height: 200px;
+		margin: 0 0 20px;
+		width: 200px;
+	}
+	section dt {
+		clear: both;
+		padding-top: 1px;
+	}
+	section h4 {
+		margin: 0 0 0 10px;
+	}
+	ul {
+		padding: 0 0 0 25px;
+	}
+}
