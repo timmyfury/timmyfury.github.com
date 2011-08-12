@@ -45,7 +45,8 @@ header nav {
 	Content
 **********************************************************************/
 section {}
-section#play {
+section#play,
+section#school {
 	display: none;
 }
 section section {}
