@@ -2,23 +2,49 @@
 	General Styles
 **********************************************************************/
 body {
+	color: #444;
 	font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
 	font-size: 62.5%;
-	padding: 15px;
-	min-width: 290px;
+	min-width: 320px;
+	text-align: center;
 /*	width: 290px;*/
 }
 a {
-	color: ;
+	color: #;
+}
+p {
+	font-size: 1.2em;
 }
 
 /*
 	Headings
+
+	text-shadow: white 0px 1px;
 **********************************************************************/
-h1 {}
-h2 {}
-h3 {}
-h4 {}
+h1 {
+	font-size: 2.8em;
+}
+h2 {
+	font-size: 2.4em;
+}
+h3 {
+	font-size: 2em;
+}
+h4 {
+	font-size: 1.6em;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a {
+	color: #444;
+	background: url('./anchor.png') right center no-repeat;
+	padding-right: 1.2em;
+	text-decoration: none;
+}
+
+
+
 
 /*
 	Lists
@@ -34,6 +60,18 @@ ol {}
 ol li {}
 
 /*
+	Shared Structure
+**********************************************************************/
+header,
+section,
+footer {
+	margin: 20px auto;
+	max-width: 60em;
+	padding: 0 20px;
+	text-align: left;
+}
+
+/*
 	Header
 **********************************************************************/
 header {}
@@ -45,11 +83,10 @@ header nav {
 	Content
 **********************************************************************/
 section {}
-section#play,
-section#school {
-	display: none;
+section section {
+	margin: 0;
+	padding: 0;
 }
-section section {}
 
 /*
 	Footer
