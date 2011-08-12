@@ -22,6 +22,7 @@ p {
 **********************************************************************/
 header:after,
 section:after,
+section section details:after,
 footer:after {
 	content: ".";
 	display: block;
@@ -32,8 +33,6 @@ footer:after {
 
 /*
 	Headings
-
-	text-shadow: white 0px 1px;
 **********************************************************************/
 h1 {
 	font-size: 2.8em;
@@ -88,25 +87,79 @@ header hgroup {
 	text-align: right;
 }
 header h1 {
+	color: #333;
 	font-size: 7em;
 	font-weight: bold;
+	margin: 0 0 10px;
+	text-shadow: #ccc 2px 2px;
+}
+header h2 {
+	color: #666;
+	font-size: 2em;
+	font-weight: bold;
+	margin: 3px 0;
+	text-shadow: #ddd 1px 1px;
 }
 header nav {
 	display: none;
 }
 header a {
-	color: #444;
+	color: #666;
 	text-decoration: none;
 }
 
 /*
 	Content
 **********************************************************************/
-section {}
-section section {
-	margin: 0;
-	padding: 0;
+section {
+	margin: 30px auto;
 }
+section h2 {
+	border-bottom: 1px #ccc solid;
+	color: #666;
+	font-size: 1.4em;
+	font-weight: bold;
+	margin: 10px 0;
+	padding: 0 0 3px;
+	text-align: right;
+	text-shadow: #ccc 1px 1px;
+	text-transform: uppercase;
+}
+section section {
+	border-bottom: 1px #ccc solid;
+	margin: 10px 0;
+	padding: 0 0 10px;
+}
+section section:last-child {
+	border-bottom: 0 none;
+}
+section h3 {
+	color: #333;
+	font-weight: bold;
+	margin: 0 0 5px;
+	text-shadow: #ccc 1px 1px;
+}
+section section details {
+	margin: 5px 0 10px;
+}
+section section details dl,
+section section details dt,
+section section details dd {
+	float: left;
+}
+section section details dt {
+	font-size: 1em;
+	line-height: 1.4em;
+	margin-right: 3px;
+}
+section section details dd {
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 1.4em;
+	margin-right: 15px;
+}
+
+
 
 section h1 a,
 section h2 a,
