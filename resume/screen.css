@@ -16,6 +16,20 @@ p {
 	font-size: 1.2em;
 }
 
+
+/*
+	Straight Clearfixin' Y'all
+**********************************************************************/
+header:after,
+section:after,
+footer:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
 /*
 	Headings
 
@@ -33,18 +47,6 @@ h3 {
 h4 {
 	font-size: 1.6em;
 }
-h1 a,
-h2 a,
-h3 a,
-h4 a {
-	color: #444;
-	background: url('./anchor.png') right center no-repeat;
-	padding-right: 1.2em;
-	text-decoration: none;
-}
-
-
-
 
 /*
 	Lists
@@ -75,8 +77,26 @@ footer {
 	Header
 **********************************************************************/
 header {}
+header img {
+	display: block;
+	float: left;
+	height: 200px;
+	margin-right: 20px;
+	width: 200px;
+}
+header hgroup {
+	text-align: right;
+}
+header h1 {
+	font-size: 7em;
+	font-weight: bold;
+}
 header nav {
 	display: none;
+}
+header a {
+	color: #444;
+	text-decoration: none;
 }
 
 /*
@@ -86,6 +106,16 @@ section {}
 section section {
 	margin: 0;
 	padding: 0;
+}
+
+section h1 a,
+section h2 a,
+section h3 a,
+section h4 a {
+	color: #444;
+	background: url('./anchor.png') right center no-repeat;
+	padding-right: 1.2em;
+	text-decoration: none;
 }
 
 /*
