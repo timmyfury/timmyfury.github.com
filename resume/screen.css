@@ -9,13 +9,6 @@ body {
 	text-align: center;
 /*	width: 290px;*/
 }
-a {
-	color: #;
-}
-p {
-	font-size: 1.2em;
-}
-
 
 /*
 	Straight Clearfixin' Y'all
@@ -46,19 +39,6 @@ h3 {
 h4 {
 	font-size: 1.6em;
 }
-
-/*
-	Lists
-**********************************************************************/
-dl {}
-dl dt {}
-dl dd {}
-
-ul {}
-ul li {}
-
-ol {}
-ol li {}
 
 /*
 	Shared Structure
@@ -128,7 +108,7 @@ section h2 {
 section section {
 	border-bottom: 1px #ccc solid;
 	margin: 10px 0;
-	padding: 0 0 10px;
+	padding: 0;
 }
 section section:last-child {
 	border-bottom: 0 none;
@@ -139,7 +119,15 @@ section h3 {
 	margin: 0 0 5px;
 	text-shadow: #ccc 1px 1px;
 }
-section section details {
+section h4 {
+	color: #333;
+	font-weight: bold;
+	margin: 0 0 0 20px;
+	text-shadow: #ccc 1px 1px;
+}
+section section details,
+section section p,
+section section ul {
 	margin: 5px 0 10px;
 }
 section section details dl,
@@ -159,6 +147,22 @@ section section details dd {
 	margin-right: 15px;
 }
 
+a {
+	color: #222;
+	font-weight: bold;
+}
+p {
+	font-size: 1.2em;
+	line-height: 1.4em;
+}
+ul {
+	list-style-type: square;
+	padding: 0 0 0 40px;
+}
+ul li {
+	font-size: 1.2em;
+	line-height: 1.4em;
+}
 
 
 section h1 a,
@@ -174,7 +178,9 @@ section h4 a {
 /*
 	Footer
 **********************************************************************/
-footer {}
+footer {
+	display: none;
+}
 
 /*
 	Media Queries
