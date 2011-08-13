@@ -146,7 +146,9 @@ section section details dd {
 	line-height: 1.4em;
 	margin-right: 15px;
 }
-
+strong {
+	font-weight: bold;
+}
 a {
 	color: #222;
 	font-weight: bold;
@@ -162,7 +164,18 @@ ul {
 ul li {
 	font-size: 1.2em;
 	line-height: 1.4em;
+	margin: 4px 0;
 }
+section ul ul {
+	list-style-type: square;
+	padding: 0 0 0 20px;
+	margin: 0;
+}
+ul li ul li {
+	font-size: 1em;
+	line-height: 1.4em;
+}
+
 
 
 section h1 a,
