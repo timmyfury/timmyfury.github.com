@@ -15,7 +15,7 @@ body {
 **********************************************************************/
 header:after,
 section:after,
-section section dl:after,
+section dl:after,
 footer:after {
 	content: ".";
 	display: block;
@@ -177,8 +177,6 @@ ul li ul li {
 	line-height: 1.4em;
 }
 
-
-
 section h1 a,
 section h2 a,
 section h3 a,
@@ -192,6 +190,52 @@ section h4 a:visited {
 /*	padding-right: 1.2em;*/
 	text-decoration: none;
 }
+
+/*
+	Skills
+**********************************************************************/
+#skills dl {}
+#skills dt {
+	color: #333;
+	clear: left;
+	float: left;
+	font-size: 1.4em;
+	font-weight: bold;
+	margin: 4px 0 4px 20px;
+	text-shadow: #ccc 1px 1px;
+	width: 14em;
+}
+#skills dd {
+	border: 1px #ccc solid;
+	border-radius: 3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+	color: #fff;
+	float: left;
+    font-size: 1.2em;
+    line-height: 1.4em;
+	margin: 4px 0;
+	width: 30em;
+}
+#skills dd em {
+	border-radius: 2px;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+	display: block;
+/*	font-weight: bold;*/
+	padding: 0 5px 0 0;
+	text-align: right;
+}
+#skills .rating-1 em { background-color: #999; width: 3em; }
+#skills .rating-2 em { background-color: #888; width: 6em; }
+#skills .rating-3 em { background-color: #777; width: 9em; }
+#skills .rating-4 em { background-color: #666; width: 12em; }
+#skills .rating-5 em { background-color: #555; width: 15em; }
+#skills .rating-6 em { background-color: #444; width: 18em; }
+#skills .rating-7 em { background-color: #333; width: 21em; }
+#skills .rating-8 em { background-color: #222; width: 24em; }
+#skills .rating-9 em { background-color: #111; width: 27em; }
+#skills .rating-10 em { background-color: #000;  }
 
 /*
 	Media Queries
