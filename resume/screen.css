@@ -15,7 +15,7 @@ body {
 **********************************************************************/
 header:after,
 section:after,
-section section details:after,
+section section dl:after,
 footer:after {
 	content: ".";
 	display: block;
@@ -55,7 +55,6 @@ footer {
 /*
 	Header
 **********************************************************************/
-header {}
 header img {
 	display: block;
 	float: left;
@@ -83,7 +82,8 @@ header h2 {
 header nav {
 	display: none;
 }
-header a {
+header a,
+header a:visited {
 	color: #666;
 	text-decoration: none;
 }
@@ -125,33 +125,34 @@ section h4 {
 	margin: 0 0 0 20px;
 	text-shadow: #ccc 1px 1px;
 }
-section section details,
+section section dl,
 section section p,
 section section ul {
 	margin: 5px 0 10px;
 }
-section section details dl,
-section section details dt,
-section section details dd {
+section section dl dt,
+section section dl dd {
 	float: left;
 }
-section section details dt {
+section section dl dt {
 	font-size: 1em;
 	line-height: 1.4em;
-	margin-right: 3px;
+	margin: 2px 5px 0 0;
 }
-section section details dd {
+section section dl dd {
 	font-size: 1.2em;
 	font-weight: bold;
 	line-height: 1.4em;
-	margin-right: 15px;
+	margin: 0 15px 0 0;
 }
 strong {
 	font-weight: bold;
 }
-a {
+a,
+a:visited {
 	color: #222;
 	font-weight: bold;
+	text-decoration: underline;
 }
 p {
 	font-size: 1.2em;
@@ -181,18 +182,15 @@ ul li ul li {
 section h1 a,
 section h2 a,
 section h3 a,
-section h4 a {
-	color: #444;
-	background: url('./anchor.png') right center no-repeat;
-	padding-right: 1.2em;
+section h4 a,
+section h1 a:visited,
+section h2 a:visited,
+section h3 a:visited,
+section h4 a:visited {
+	color: #333;
+/*	background: url('./anchor.png') right center no-repeat;*/
+/*	padding-right: 1.2em;*/
 	text-decoration: none;
-}
-
-/*
-	Footer
-**********************************************************************/
-footer {
-	display: none;
 }
 
 /*

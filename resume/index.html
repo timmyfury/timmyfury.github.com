@@ -19,7 +19,7 @@
 		
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-		<link rel="stylesheet" href="./reset.css" type="text/css">
+		<link rel="stylesheet" href="./normalize.css" type="text/css">
 		<link rel="stylesheet" href="./screen.css" type="text/css">
 	</head>
 
@@ -49,20 +49,24 @@
 			<section>
 				<h3><a href="http://www.ticketleap.com/">TicketLeap</a></h3>
 				
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>Senior Web Developer</dd>
-						<dt>Type</dt> <dd>Full-time</dd>
-						<dt>Dates</dt> <dd><time datetime="">Oct 2010</time> &ndash; <time datetime="">present</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>Senior Web Developer</dd>
+					<dt>Type</dt> <dd>Full-time</dd>
+					<dt>Dates</dt> <dd><time datetime="">Oct 2010</time> &ndash; <time datetime="">present</time></dd>
+				</dl>
 
 				<ul>
-					<li>Implemented ticketing and marketing features using the Django, Python Web framework.</li>
-					<li>Developed namespace to encapsulate JavaScript modules for various uses. Some highlights include:
+					<li>Implemented ticketing and marketing features using the Django, Python Web framework.
+						<ul>
+							<li><strong>Tracking Codes and Visitor Statistics</strong></li>
+							<li><strong>Registration Forms</strong></li>
+							<li><strong>Email Blast</strong></li>
+						</ul>
+					</li>
+					<li>Developed namespace to encapsulate JavaScript modules for various uses.
 						<ul>
 							<li><strong>Configuration</strong>: a module that allows values to be accessed globally 
-								and allows other components and plugins to triggered actions asynchronously once particular 
+								and allows other components and plugins to trigger actions asynchronously once particular 
 								values have been set. This utilizes the publish/subscribe event model.</li>
 							<li><strong>Analytics</strong>: this module defers the loading of and logging to Google Analytics 
 								to prevent the Google Analytics library from slowing down the loading of our app and 
@@ -74,7 +78,7 @@
 								JavaScript functionality overall.</li>
 						</ul>
 					</li>
-					<li>Developed jQuery plugins that utilize progressive enhancement techniques. Some highlights include:
+					<li>Developed jQuery plugins that utilize progressive enhancement techniques.
 						<ul>
 							<li><strong>Credit card input</strong>: an enhancement to text inputs that indicates 
 								what type of card was entered based on the credit card number.</li>
@@ -94,15 +98,17 @@
 								to select or unselect all visible options.</li>
 						</ul>
 					</li>
+					<li>Integrated Facebook and Twitter APIs to integrate social functionality.</li>
+					<li>Utilized CSS3 to replace image replacement to achieve aesthetic.</li>
+					<li>Designed and built mobile version of our app utilizing HTML5 and responsive design techniques.</li>
+					<li>Architected presentation layer patterns to easily manage a high volume of HTML, CSS, 
+						JavaScript and image assets.</li>
 					<li>Managed releases.</li>
 					<li>Integrated Amazon Web Services including Amazon Simple Queue Service (SQS), Amazon Simple Storage 
 						Service (S3), Amazon Simple Email Service (SES).</li>
 					<li>Worked with deployment on Amazon Web Services using Elastic Load Balancing, Amazon Elastic 
 						Compute Cloud (EC2), Amazon Route 53 for DNS, Amazon Relational Database Service (RDS) and 
 						CloudFront for content delivery.</li>
-					<li>Designed and built mobile version of our app utilizing responsive design techniques.</li>
-					<li>Architected presentation layer patterns to easily manage a high volume of HTML, CSS, 
-						JavaScript and image assets.</li>
 					<li>Implemented an automated deployment process for marketing related content using Jekyll 
 						&mdash; a blog-aware, static site generator &mdash; allowing updates to marketing content 
 						to be updated and released independent of our main platform.</li>
@@ -115,98 +121,105 @@
 
 			<section>
 				<h3>NerdNodes</h3>
-				
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>Developer, Principal</dd>
-						<dt>Type</dt> <dd>Freelance</dd>
-						<dt>Dates</dt> <dd><time datetime="">May 2010</time> &ndash; <time datetime="">present</time></dd>
-					</dl>
-				</details>
+
+				<dl>
+					<dt>Title</dt> <dd>Developer, Principal</dd>
+					<dt>Type</dt> <dd>Freelance</dd>
+					<dt>Dates</dt> <dd><time datetime="">May 2010</time> &ndash; <time datetime="">present</time></dd>
+				</dl>
 
 				<ul>
 					<li>Managed client relationships.</li>
 					<li>Scheduled delivery schedules.</li>
 					<li>Worked with freelancers to complete contracted work.</li>
+					<li>Submitted invoices and managed financial aspects of the company.</li>
+					<li>Wrote statements of work.</li>
 				</ul>
 
 				<h4>Automated Data Processing Inc.</h4>
 				<ul>
-					<li>Chicken andouille swine short loin brisket, biltong meatloaf hamburger pancetta venison tail.</li>
-					<li>Hamburger pork belly venison, bresaola rump meatloaf turkey shank beef tail flank tri-tip strip steak tenderloin chicken.</li>
-					<li>Tongue beef ribs meatball biltong rump beef, ground round pork belly pig. Cow ribeye meatball sausage pork.</li>
-					<li>Cow tongue shank rump ham sausage. Ball tip tri-tip pig, meatball strip steak corned beef shankle chicken flank.</li>
-					<li>Shankle bresaola hamburger strip steak jowl corned beef rump drumstick, meatball shoulder shank biltong short loin tenderloin cow.</li>
+					<li>Evangelized the adoption of the Revolution UI standards and widget library.</li>
+					<li>Evangelized the benefits of and adherence to web standards.</li>
+					<li>Consulted with internal development teams to assist in planning the integration of the Revolution UI Library
+						into existing development environments varying from Java to .NET.</li>
+					<li>Developed custom widgets using the Dojo JavaScript Toolkit and the Dijit widget system.
+						<ul>
+							<li><strong>Wizard</strong></li>
+							<li><strong>DualMultiSelect</strong></li>
+							<li><strong>App</strong></li>
+						</ul>
+					</li>
 				</ul>
 
 				<h4>TBC Corporation</h4>
 				<ul>
-					<li>Chicken andouille swine short loin brisket, biltong meatloaf hamburger pancetta venison tail.</li>
-					<li>Hamburger pork belly venison, bresaola rump meatloaf turkey shank beef tail flank tri-tip strip steak tenderloin chicken.</li>
-					<li>Tongue beef ribs meatball biltong rump beef, ground round pork belly pig. Cow ribeye meatball sausage pork.</li>
-					<li>Cow tongue shank rump ham sausage. Ball tip tri-tip pig, meatball strip steak corned beef shankle chicken flank.</li>
-					<li>Shankle bresaola hamburger strip steak jowl corned beef rump drumstick, meatball shoulder shank biltong short loin tenderloin cow.</li>
+					<li>Developed C#/.Net site core that allowed seven basic marketing sites to be implemented using an 
+						identical codebase with a simple configuration changes.</li>
+					<li>Converted comps to xHTML/CSS. All seven sites used identical markup but different stylesheets.</li>
 				</ul>
 
-				<h4>National Organization on Disability</h4>
+				<h4><a href="http://nod.org/">National Organization on Disability</a></h4>
 				<ul>
-					<li>Chicken andouille swine short loin brisket, biltong meatloaf hamburger pancetta venison tail.</li>
-					<li>Hamburger pork belly venison, bresaola rump meatloaf turkey shank beef tail flank tri-tip strip steak tenderloin chicken.</li>
-					<li>Tongue beef ribs meatball biltong rump beef, ground round pork belly pig. Cow ribeye meatball sausage pork.</li>
-					<li>Cow tongue shank rump ham sausage. Ball tip tri-tip pig, meatball strip steak corned beef shankle chicken flank.</li>
-					<li>Shankle bresaola hamburger strip steak jowl corned beef rump drumstick, meatball shoulder shank biltong short loin tenderloin cow.</li>
+					<li>Implemented ExpressionEngine 1.7.</li>
+					<li>Provided automated deployment process.</li>
+					<li>Developed an ExpressionEngine extension that overrides the native pagination functionality to use 
+						the value in the get string for the page. <a href="http://github.com/timmyfury/EE-Query-String-Pagination">The 
+						source</a> is available on github.</li>
 				</ul>
 
-				<h4>John Sterling Ruth Photography</h4>
+				<h4><a href="http://johnsterlingruth.com/">John Sterling Ruth Photography</a></h4>
 				<ul>
-					<li>Chicken andouille swine short loin brisket, biltong meatloaf hamburger pancetta venison tail.</li>
-					<li>Hamburger pork belly venison, bresaola rump meatloaf turkey shank beef tail flank tri-tip strip steak tenderloin chicken.</li>
-					<li>Tongue beef ribs meatball biltong rump beef, ground round pork belly pig. Cow ribeye meatball sausage pork.</li>
-					<li>Cow tongue shank rump ham sausage. Ball tip tri-tip pig, meatball strip steak corned beef shankle chicken flank.</li>
-					<li>Shankle bresaola hamburger strip steak jowl corned beef rump drumstick, meatball shoulder shank biltong short loin tenderloin cow.</li>
+					<li>Developed a simple admin for managing images, videos and galleries.</li>
+					<li>Provided XML API interface for flash based version of the site.</li>
+					<li>Implemented mobile version of the site using jQuery Mobile.</li>
 				</ul>
 			</section>
 
 			<section>
 				<h3><a href="http://happycog.com/">Happy Cog Philadelphia</a></h3>
 
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>Presentation Layer Developer</dd>
-						<dt>Type</dt> <dd>Contract</dd>
-						<dt>Dates</dt> <dd><time datetime="">Aug 2009</time> &ndash; <time datetime="">May 2010</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>Presentation Layer Developer</dd>
+					<dt>Type</dt> <dd>Contract</dd>
+					<dt>Dates</dt> <dd><time datetime="">Aug 2009</time> &ndash; <time datetime="">May 2010</time></dd>
+				</dl>
 
 				<h4>Automated Data Processing Inc.</h4>
 				<ul>
 					<li>Implemented UI component library using Dojo JavaScript Framework</li>
-					<li>Developed custom Dijit widgets for implementation in diverse environments</li>
-					<li>Gathered full business requirements based on UI concept screens</li>
+					<li>Produced extensive documentation site and example library to help kickstart implementation.</li>
+					<li>Extended the entire Dijit widget library and a significant amount of the Dojox widget library into a custom 
+						namespace to ensure forward compatibility and enforcement of Revolution UI standards.</li>
+					<li>Gathered full business requirements based on UI concept screens.</li>
+					<li>Developed custom Dijit widgets for implementation in diverse environments
+						<ul>
+							<li><strong>MegaMenu</strong></li>
+							<li><strong>Shell</strong></li>
+							<li><strong>AppContainer</strong></li>
+						</ul>
+					</li>
 				</ul>
 
 				<h4>Build-a-Bear Workshop</h4>
 				<ul>
-					<li>Converted comps to XHTML/CSS</li>
+					<li>Converted comps to xHTML/CSS</li>
 					<li>Developed jQuery plug-ins</li>
 				</ul>
 
 				<h4>Daily Kos</h4>
 				<ul>
-					<li>Converted Photoshop comps to XHTML/CSS</li>
+					<li>Converted Photoshop comps to xHTML/CSS</li>
 				</ul>
 			</section>
 
 			<section>
 				<h3><a href="http://gamervision.com/">Gamervision LLC</a></h3>
 
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>Ruby Developer, Engineer</dd>
-						<dt>Type</dt> <dd>Full-time</dd>
-						<dt>Dates</dt> <dd><time datetime="">Oct 2008</time> &ndash; <time datetime="">Aug 2009</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>Ruby Developer, Engineer</dd>
+					<dt>Type</dt> <dd>Full-time</dd>
+					<dt>Dates</dt> <dd><time datetime="">Oct 2008</time> &ndash; <time datetime="">Aug 2009</time></dd>
+				</dl>
 
 				<ul>
 					<li>Negotiated contracts</li>
@@ -221,13 +234,11 @@
 			<section>
 				<h3><a href="http://www.empathylab.com/">Empathy Lab</a></h3>
 
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>PHP Developer</dd>
-						<dt>Type</dt> <dd>Contract</dd>
-						<dt>Dates</dt> <dd><time datetime="">Apr 2008</time> &ndash; <time datetime="">Oct 2008</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>PHP Developer</dd>
+					<dt>Type</dt> <dd>Contract</dd>
+					<dt>Dates</dt> <dd><time datetime="">Apr 2008</time> &ndash; <time datetime="">Oct 2008</time></dd>
+				</dl>
 
 				<h4>MTV Networks</h4>
 				<ul>
@@ -244,13 +255,11 @@
 			<section>
 				<h3><a href="http://www.razorfish.com/">Razorfish</a></h3>
 
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>Senior Presentation Layer Developer</dd>
-						<dt>Type</dt> <dd>Full-time</dd>
-						<dt>Dates</dt> <dd><time datetime="">Feb 2008</time> &ndash; <time datetime="">Apr 2008</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>Senior Presentation Layer Developer</dd>
+					<dt>Type</dt> <dd>Full-time</dd>
+					<dt>Dates</dt> <dd><time datetime="">Feb 2008</time> &ndash; <time datetime="">Apr 2008</time></dd>
+				</dl>
 
 				<ul>
 					<li>Converted Photoshop comps to XHTML/CSS</li>
@@ -261,13 +270,11 @@
 			<section>
 				<h3><a href="http://www.electronicink.com/">Electronic Ink</a></h3>
 
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>Senior Interactive Technologist</dd>
-						<dt>Type</dt> <dd>Full-time</dd>
-						<dt>Dates</dt> <dd><time datetime="">Apr 2006</time> &ndash; <time datetime="">Feb 2008</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>Senior Interactive Technologist</dd>
+					<dt>Type</dt> <dd>Full-time</dd>
+					<dt>Dates</dt> <dd><time datetime="">Apr 2006</time> &ndash; <time datetime="">Feb 2008</time></dd>
+				</dl>
 
 				<ul>
 					<li>Implemented source control system</li>
@@ -330,13 +337,11 @@
 			<section>
 				<h3><a href="http://www.dccc.edu/">Delaware County Community College</a></h3>
 
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>Web Services Specialist</dd>
-						<dt>Type</dt> <dd>Full-time</dd>
-						<dt>Dates</dt> <dd><time datetime="">Aug 2004</time> &ndash; <time datetime="">Apr 2006</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>Web Services Specialist</dd>
+					<dt>Type</dt> <dd>Full-time</dd>
+					<dt>Dates</dt> <dd><time datetime="">Aug 2004</time> &ndash; <time datetime="">Apr 2006</time></dd>
+				</dl>
 
 				<ul>
 					<li>Analyzed user requirements, planned information architecture scheme and guided visual style</li>
@@ -355,13 +360,11 @@
 			<section>
 				<h3><a href="http://fi.edu/">Franklin Institute Science Museum</a></h3>
 
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>Manager of Camp-in program</dd>
-						<dt>Type</dt> <dd>Part-time</dd>
-						<dt>Dates</dt> <dd><time datetime="">Oct 2000</time> &ndash; <time datetime="">April 2006</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>Manager of Camp-in program</dd>
+					<dt>Type</dt> <dd>Part-time</dd>
+					<dt>Dates</dt> <dd><time datetime="">Oct 2000</time> &ndash; <time datetime="">April 2006</time></dd>
+				</dl>
 
 				<ul>
 					<li>Delivered welcome address to parents and children spending the night in the museum.</li>
@@ -382,12 +385,10 @@
 			<section>
 				<h3><a href="http://eatingcrowe.com/">Eating Crowe</a></h3>
 
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>The Talent</dd>
-						<dt>Dates</dt> <dd><time datetime="">May 2009</time> &ndash; <time datetime="">Nov 2009</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>The Talent</dd>
+					<dt>Dates</dt> <dd><time datetime="">May 2009</time> &ndash; <time datetime="">Nov 2009</time></dd>
+				</dl>
 
 				<p>Born out of my desire to share my love of food, this cooking show aimed to show viewers that complex food was not out
 					of their reach.</p>
@@ -403,14 +404,12 @@
 			<section>
 				<h3><a href="http://canhasdomain.com/">canhasdomain</a></h3>
 
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>Developer</dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>Developer</dd>
+				</dl>
 
 				<p>A simple Sinatra application that allows you to find out whether a domain name is available. This is done by parsing the whois 
-					information for a url. <a href="https://github.com/timmyfury/canhasdomain">The source</a> is available on github.</p>
+					information for a url. <a href="http://github.com/timmyfury/canhasdomain">The source</a> is available on github.</p>
 
 				<ul>
 					<li>Conceived feature for the site.</li>
@@ -421,42 +420,34 @@
 			<section>
 				<h3><a href="http://philamade.com/">PhilaMade</a></h3>
 
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>SiteNite Developer</dd>
-						<dt>Dates</dt> <dd><time datetime="">Apr 16 2006</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>SiteNite Developer</dd>
+					<dt>Dates</dt> <dd><time datetime="">Apr 16 2006</time></dd>
+				</dl>
 			</section>
 
 			<section>
 				<h3><a href="http://cantyshanty.com/">Canty Shanty</a></h3>
 
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>Creator, Maintainer</dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>Creator, Maintainer</dd>
+				</dl>
 			</section>
 
 			<section>
 				<h3><a href="http://bananusinfo.info/">Bananus Info</a></h3>
 
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>Creator</dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>Creator</dd>
+				</dl>
 			</section>
 
 			<section>
 				<h3><a href="http://operationdandelion.com/">Operation Dandelion</a></h3>
 
-				<details>
-					<dl>
-						<dt>Title</dt> <dd>Creator</dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Title</dt> <dd>Creator</dd>
+				</dl>
 			</section>
 		</section>
 
@@ -466,59 +457,43 @@
 			<section>
 				<h3><a href="http://www.artinstitutes.edu/philadelphia/">Art Institute of Philadelphia</a></h3>
 
-				<details>
-					<dl>
-						<dt>Degree</dt> <dd>Incomplete</dd>
-						<dt>Program</dt> <dd>Culinary Arts</dd>
-						<dt>Dates</dt> <dd><time datetime="">May 2008</time> &ndash; <time datetime="">Nov 2009</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Degree</dt> <dd>Incomplete</dd>
+					<dt>Program</dt> <dd>Culinary Arts</dd>
+					<dt>Dates</dt> <dd><time datetime="">May 2008</time> &ndash; <time datetime="">Nov 2009</time></dd>
+				</dl>
 			</section>
 
 			<section>
 				<h3><a href="http://www.temple.edu/">Temple University</a></h3>
 
-				<details>
-					<dl>
-						<dt>Degree</dt> <dd>Incomplete</dd>
-						<dt>Program</dt> <dd>Management Information Systems</dd>
-						<dt>Dates</dt> <dd><time datetime="">June 2004</time> &ndash; <time datetime="">Aug 2006</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Degree</dt> <dd>Incomplete</dd>
+					<dt>Program</dt> <dd>Management Information Systems</dd>
+					<dt>Dates</dt> <dd><time datetime="">June 2004</time> &ndash; <time datetime="">Aug 2006</time></dd>
+				</dl>
 			</section>
 
 			<section>
 				<h3><a href="http://www.dccc.edu/">Delaware County Community College</a></h3>
 
-				<details>
-					<dl>
-						<dt>Degree</dt> <dd>ABA</dd>
-						<dt>Program</dt> <dd>Business Administration</dd>
-						<dt>Dates</dt> <dd><time datetime="">Jan 2002</time> &ndash; <time datetime="">May 2004</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Degree</dt> <dd>ABA</dd>
+					<dt>Program</dt> <dd>Business Administration</dd>
+					<dt>Dates</dt> <dd><time datetime="">Jan 2002</time> &ndash; <time datetime="">May 2004</time></dd>
+				</dl>
 			</section>
 
 			<section>
 				<h3><a href="http://www.dccc.edu/">Delaware County Community College</a></h3>
 
-				<details>
-					<dl>
-						<dt>Degree</dt> <dd>AS</dd>
-						<dt>Program</dt> <dd>Computer Science</dd>
-						<dt>Dates</dt> <dd><time datetime="">Sep 2001</time> &ndash; <time datetime="">May 2003</time></dd>
-					</dl>
-				</details>
+				<dl>
+					<dt>Degree</dt> <dd>AS</dd>
+					<dt>Program</dt> <dd>Computer Science</dd>
+					<dt>Dates</dt> <dd><time datetime="">Sep 2001</time> &ndash; <time datetime="">May 2003</time></dd>
+				</dl>
 			</section>
 		</section>
 
-		<footer>
-			<hgroup>
-				<h1>Tim Crowe</h1>
-				<h2><a href="mailto:tim.crowe@timmyfury.com">tim.crowe@timmyfury.com</a></h2>
-				<h2><a href="tel:+1-484-557-9198">(484) 557-9198</a></h2>
-				<h2><a href="https://twitter.com/timmyfury">@timmyfury</a></h2>
-			</hgroup>
-		</footer>
 	</body>
 </html>
