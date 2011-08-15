@@ -7,7 +7,6 @@ body {
 	font-size: 62.5%;
 	min-width: 320px;
 	text-align: center;
-/*	width: 320px;*/
 }
 
 /*
@@ -222,7 +221,6 @@ section h4 a:visited {
 		-moz-border-radius: 2px;
 		-webkit-border-radius: 2px;
 	display: block;
-/*	font-weight: bold;*/
 	padding: 0 5px 0 0;
 	text-align: right;
 }
@@ -243,6 +241,9 @@ section h4 a:visited {
 @media screen and (max-width: 600px) {}
 
 @media screen and (max-width: 480px) {
+	header {
+		display: none;
+	}
 	header img {
 		display: block;
 		float: left;
@@ -254,6 +255,23 @@ section h4 a:visited {
 		clear: both;
 		padding-top: 1px;
 	}
+	#skills dt {
+		margin: 4px 0;
+		width: 10.5em;
+	}
+	#skills dd {
+		margin: 5px 0;
+		width: 25em;
+	}
+	#skills .rating-1 em { width: 2.5em; }
+	#skills .rating-2 em { width: 5em; }
+	#skills .rating-3 em { width: 7.5em; }
+	#skills .rating-4 em { width: 10em; }
+	#skills .rating-5 em { width: 12.5em; }
+	#skills .rating-6 em { width: 15em; }
+	#skills .rating-7 em { width: 17.5em; }
+	#skills .rating-8 em { width: 20em; }
+	#skills .rating-9 em { width: 22.5em; }
 }
 
 @media screen and (max-width: 400px) {}
@@ -279,4 +297,27 @@ section h4 a:visited {
 	ul {
 		padding: 0 0 0 25px;
 	}
+	#skills dt {
+		margin: 4px 0;
+		width: 7.7em;
+	}
+	#skills dd {
+		margin: 5px 0;
+		width: 15em;
+	}
+	#skills .rating-1 em { width: 1.5em; }
+	#skills .rating-2 em { width: 3em; }
+	#skills .rating-3 em { width: 4.5em; }
+	#skills .rating-4 em { width: 6em; }
+	#skills .rating-5 em { width: 7.5em; }
+	#skills .rating-6 em { width: 9em; }
+	#skills .rating-7 em { width: 10.5em; }
+	#skills .rating-8 em { width: 12em; }
+	#skills .rating-9 em { width: 13.5em; }
 }
+
+
+
+
+
+
