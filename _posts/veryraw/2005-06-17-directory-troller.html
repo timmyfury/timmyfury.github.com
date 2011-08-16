@@ -1,0 +1,91 @@
+--- 
+slug: directory-troller
+wordpress: 
+  guid: http://veryraw.com/history/2005/06/directory-troller/
+  date: 2005-06-17 16:08:05 -04:00
+  id: 222
+  date_gmt: 2005-06-17 21:08:05 -04:00
+  categories: 
+  - slug: nerdery
+    title: Nerdery
+    id: 13
+  - slug: web-development
+    title: Web development
+    id: 22
+  status: publish
+category: veryraw
+layout: archive
+comments: 
+  list: 
+  - author: Matthom
+    date: 2005-06-18 06:36:28 -04:00
+    id: 1038
+    content: |-
+      Sounds interesting. I'll be trying this later.
+      
+      I might be able to use it for folders of images - sometimes I need to know if a certain folder or image exists, without having to check via FTP.
+      
+      Thanks.
+    date_gmt: 2005-06-18 11:36:28 -04:00
+    author_email: matthom@gmail.com
+    author_url: http://www.matthom.com/
+  - author: Timothy
+    date: 2005-06-18 09:05:29 -04:00
+    id: 1039
+    content: "You should really look into the <a href=\"http://us3.php.net/manual/en/ref.filesystem.php\" rel=\"nofollow\">Filesystem functions</a> on php.net. They are really robust and depending on your access to your php.ini file you can add alot of bad ass functionality. Doing this sort of thing via FTP works but something tells me that doing it via php is more secure and more efficient.  "
+    date_gmt: 2005-06-18 14:05:29 -04:00
+    author_email: timothycrowe@gmail.com
+    author_url: http://veryraw.com
+  - author: Matthom
+    date: 2005-06-20 13:14:52 -04:00
+    id: 1041
+    content: |-
+      Well... your script will just output (list) the contents of a directory, right? That's really all I need.
+      
+      For example, an image folder of album artwork, by a particular artist - sometimes I need to know if a certain album cover exists already.
+      
+      So, just a text listing of each item is sufficient. That way, I can check through a browser if an image named, "some_cities.jpg", for example - exists. 
+      
+      Those Filesystem functions are great, though... I'll have to look at them at some point...
+    date_gmt: 2005-06-20 18:14:52 -04:00
+    author_email: matthom@gmail.com
+    author_url: http://www.matthom.com/
+  count: 3
+  show: false
+title: Directory troller
+published: false
+
+---
+
+<p>A few days ago <a href="http://iam.thecolossus.net/">Mark</a> asked me to write a php script for him that would iterate through a directory and list all of the files for a project he is working on.  I enjoy exercises like this.  Makes me use my brain a bit and its good fun to practice with file and directory manipulation, something that doesn't get used very frequently in my world of add/modify/delete database apps.</p>
+<p>So the script just recursively trolls through the directory specified and dumps out a nested list of the file and folder structure.  Mark has modified it to output links to the files, which I invite him to post.  I have dropped my original script though.  Other improvements could be some classes with css to pretty up the output or group the items.  Also a function that would evaluate each file for MIME or even extension to set a class to display an ison with css would be special too.</p>
+<p>Here's the code.  If you want to post some improvements to this feel free I would love to see it.</p>
+
+<code>
+<pre>
+&lt;?php
+
+ $directory = &quot;/the/directory/to/troll/&quot;;
+
+ troll($directory);
+
+ function troll($directory){
+  $handle = opendir($directory); 
+  echo &quot;&lt;ul&gt;\n&quot;; 
+  while(false !== ($hit = readdir($handle))){ 
+   if ($hit !== '.' &amp;&amp; $hit !== '..' &amp;&amp; is_dir($hit)){
+    echo &quot;&lt;li&gt;$hit\n&quot;;
+    $new_directory = $directory.'/'.$hit;
+    jump_directory($new_directory);
+    echo &quot;&lt;/li&gt;\n&quot;;
+  } elseif ($hit !== '.' &amp;&amp; $hit !== '..') {
+   echo &quot;&lt;li&gt;$hit&lt;/li&gt;\n&quot;;
+  }
+ }
+  echo &quot;\n&quot;;
+}
+?&gt;
+
+</pre>
+</code>
+

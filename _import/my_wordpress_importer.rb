@@ -5,15 +5,15 @@ require 'pp'
 require 'jekyll'
 
 module Jekyll
-	module WordPressImporter
+	module MyWordPressImporter
 
 		def self.process(dbname, user, pass, host = 'localhost')
-		
+
 			puts "Remove old archive directory? [Yn]"
 			remove = STDIN.gets.chomp
 
 			if remove != "n"
-				FileUtils.remove_dir(Jekyll::WordPressImporter::archive_path, true)
+				FileUtils.remove_dir(Jekyll::MyWordPressImporter::archive_path, true)
 			end
 	
 			puts "Starting Wordpress Migration"
@@ -21,8 +21,8 @@ module Jekyll
 			db = Sequel.mysql(dbname, :user => user, :password => pass, :host => host)
 			puts "Connecting to #{dbname} on #{host}"
       
-			FileUtils.makedirs Jekyll::WordPressImporter::archive_path
-			puts "Creating #{Jekyll::WordPressImporter::archive_path} directories"
+			FileUtils.makedirs Jekyll::MyWordPressImporter::archive_path
+			puts "Creating #{Jekyll::MyWordPressImporter::archive_path} directories"
       
 			total_posts = db["select ID, post_author, post_date, post_date_gmt, post_content, post_title, post_status from wp_posts"].count
 			puts "Found #{total_posts} entries"
@@ -61,7 +61,7 @@ module Jekyll
 			puts "\t- has #{categories.size} categories"
 
 			comments = []
-			db[Jekyll::WordPressImporter.comments_by_post_query(post[:ID])].each do |comment|
+			db[Jekyll::MyWordPressImporter.comments_by_post_query(post[:ID])].each do |comment|
 				comments.push({
 					"id"			=>	comment[:comment_ID],
 					"author"		=>	comment[:comment_author].to_s,
@@ -102,9 +102,9 @@ module Jekyll
 
 			}.delete_if { |k,v| v.nil? || v == ''}.to_yaml
 
-			Jekyll::WordPressImporter::append_entry(file_name, front_matter)
-			Jekyll::WordPressImporter::append_entry(file_name, "---")
-			Jekyll::WordPressImporter::append_entry(file_name, post[:post_content].to_s)
+			Jekyll::MyWordPressImporter::append_entry(file_name, front_matter)
+			Jekyll::MyWordPressImporter::append_entry(file_name, "---")
+			Jekyll::MyWordPressImporter::append_entry(file_name, post[:post_content].to_s)
                 
 			post_count += 1
 			end
@@ -112,7 +112,7 @@ module Jekyll
 		end 
 		
 		def self.append_entry(file, content)
-			File.open("#{Jekyll::WordPressImporter::archive_path}/#{file}", "a") do |f|
+			File.open("#{Jekyll::MyWordPressImporter::archive_path}/#{file}", "a") do |f|
 				f.puts content
 				f.puts "\r"
 			end
@@ -139,5 +139,5 @@ module Jekyll
 			File.expand_path(File.join(File.dirname(__FILE__), *%w(.. _posts veryraw)))
 		end
     
-	end # module WordPressImporter
+	end # module MyWordPressImporter
 end # module Jekyll

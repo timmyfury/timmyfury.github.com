@@ -1,0 +1,53 @@
+--- 
+slug: eliminating-the-resend-postdata-error
+wordpress: 
+  guid: http://veryraw.com/history/2005/06/postdata/
+  date: 2005-06-28 12:46:38 -04:00
+  id: 239
+  date_gmt: 2005-06-28 17:46:38 -04:00
+  categories: 
+  - slug: nerdery
+    title: Nerdery
+    id: 13
+  - slug: web-development
+    title: Web development
+    id: 22
+  status: publish
+category: veryraw
+layout: archive
+comments: 
+  list: 
+  count: 0
+  show: false
+title: Eliminating the 'resend POSTDATA' error.
+published: false
+
+---
+
+<p>A few months ago I was having an issue with a module I was developing for the website at the college.  It's a problem that I have run into before but simply ignored it because it wasn't an enormous problem.  You submit a form.  It performs some action.  You hit the back button.  You receive a message that reads something like this...</p>
+<blockquote>The page you are tyring to view contains POSTDATA. If you resend the data, any action the form carried out (such as search or online purchase) will be repeated. To resend the data, click OK. Otherwise, click Cancel.</blockquote>
+<p>So it's not a big deal but whats going to happen is that whatever action had just been performed is going to be performed again.  This may not matter if the action is updating a message or deleting based on some unique identifier, but if the action is a purchase from an online store or adding a user account, this could cause some serious issues.</p>
+<p>The problem originates in the HTTP Header where this information is stored.  The browser remembers all the information that it sent in a request to the web server you are communicating with.  So theoretically if you clear that information from the browser you will eliminate the problem.</p>
+<p>My solution to the issue is to tell the browser not to cache the page.  After your application does its work, you will probably redirect to a feedback page or back to the originating page to display some thanks or feedback.  Before sending the <code>redirect</code> header, send <code>cache-control</code> header.  This will tell most browsers not to cache the page.  Then if the user hits the back button, they will be sent to the page they were at prior to the form submission (back to the form itself) instead of the page that is performing the actions.  It looks like this.</p>
+<code>
+<pre>
+< ?php
+  // a bunch of stuff that performs the actions you want.
+
+  // some headers to disable caching
+    header(&quot;Cache-Control: no-store, no-cache, must-revalidate&quot;);
+    header(&quot;Cache-Control: post-check=0, pre-check=0&quot;, false);
+    header(&quot;Pragma: no-cache&quot;);
+
+  // send it to a new page.
+    header(&quot;Location: http://veryraw.com/&quot;);
+?>
+</pre>
+</code>
+<p>There are some assumptions made here.  I generally send to a different page when a form is submitted. I do my work there then redirect to somewhere else depending on what the action performed was.  Some developers prefer to submit to the page the form is on.  In this case <a href="http://ad.hominem.org/log/2005/03/eliminating_the.php">the problem would come if the page was reloaded</a> rather than if the back button was clicked. Regardless of your methods the solution should still work.</p>
+<p>Try it.  Let me know what you think.  Here is some further reading if you want to know where I got my methods from.</p>
+<ul>
+<li><a href="http://us2.php.net/header">php.net: header</a></li>
+<li><a href="http://www.w3.org/Protocols/">W3C: HTTP - Hypertext Transfer Protocol</a></li>
+</ul>
+

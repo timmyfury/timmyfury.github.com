@@ -6,14 +6,14 @@
 help = <<HELP
 Jekyll Import needs a better description
 
-./_import/import -d veryrawblog -u poopmaster -p pastameatball -h db.timmyfury.com
+./_import/import -d veryrawblog -u root -h localhost
 
 HELP
 
 require 'rubygems'
 require 'optparse'
 require 'jekyll'
-require './_import/wordpress_importer.rb'
+require './_import/my_wordpress_importer.rb'
 
 exec = {}
 options = {}
@@ -41,7 +41,7 @@ opts = OptionParser.new do |opts|
 	end
 	
 	opts.on("-d", "--database", "Database name") do |i|
-		options['db_user'] = i
+		options['db_database'] = i
 	end
 
 	opts.on("--version", "Display current version") do
@@ -53,6 +53,10 @@ end
 # Read command line options into `options` hash
 opts.parse!
 
-if options['db_user'] && options['db_pass'] && options['db_host'] && options['db_user']
-	Jekyll::WordPressImporter.process("veryrawblog","poopmaster","pastameatball","db.timmyfury.com")
+# puts options['db_database'], options['db_user'], options['db_pass'], options['db_host']
+
+Jekyll::MyWordPressImporter.process('veryrawblog','root','','localhost')
+
+if options['db_database'] && options['db_user'] && options['db_pass'] && options['db_host']
+	Jekyll::MyWordPressImporter.process("#{options['db_database']}","#{options['db_user']}","#{options['db_pass']}","#{options['db_host']}")
 end

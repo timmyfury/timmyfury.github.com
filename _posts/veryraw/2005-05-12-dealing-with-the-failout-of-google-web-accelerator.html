@@ -1,0 +1,80 @@
+--- 
+slug: dealing-with-the-failout-of-google-web-accelerator
+wordpress: 
+  guid: http://veryraw.com/history/2005/05/dealing-with-the-failout/
+  date: 2005-05-12 23:07:14 -04:00
+  id: 162
+  date_gmt: 2005-05-13 04:07:14 -04:00
+  categories: 
+  - slug: web-development
+    title: Web development
+    id: 22
+  status: publish
+category: veryraw
+layout: archive
+comments: 
+  list: 
+  - author: burnie the bat
+    date: 2005-05-13 07:33:12 -04:00
+    id: 936
+    content: I agree with your method of such a thing, you dont want to give away to every tom, dick and harry how your internal workings function. That seems like a horrible oversight on google's part in developing such an application. Its good in concept, but someone so familiar with the web should know that it would cause problems like the above. Makes me doubt their competence or software testing methods.
+    date_gmt: 2005-05-13 12:33:12 -04:00
+    author_email: burnman@gmail.com
+    author_url: http://www.grindinglight.com/blog
+  - author: Timothy
+    date: 2005-05-13 08:48:15 -04:00
+    id: 940
+    content: If you look at the soure you will still be able to find out what's being passed.  The advantage comes if you want to push several types of information (or something other than a simple number) to the next page.
+    date_gmt: 2005-05-13 13:48:15 -04:00
+    author_email: timothycrowe@gmail.com
+    author_url: http://
+  - author: mo
+    date: 2005-05-15 18:35:14 -04:00
+    id: 960
+    content: wouldnt it also load the advertising links on the pages as well? and wouldnt this make your computer more vulnerable to viruses? perhaps you already answered my questions and while you know I am mildly interested in web development, my knowledge only stretches so far...
+    date_gmt: 2005-05-15 23:35:14 -04:00
+    author_email: maureen.mcelaney@gmail.com
+    author_url: ""
+  - author: Timothy
+    date: 2005-05-17 09:19:20 -04:00
+    id: 967
+    content: |-
+      Mo - these are two really good points.  Would this boost googles adwords revenue by falsely clicking the links to their advertisers products.  Don't know.  I couldn't find anything about this but I think everyone is a bit more freaked about the security issues than the money in google's pockets issue.  
+      
+      The possibility of the accelarator clicking on links that jack up your computer blows.  I would suspect that if you use <a href="http://getfirefox.com/" rel="nofollow">Firefox</a> or disable the activeX controller in Internet Explorer you would be relatively safe.
+      
+      Google has apparently discontinued downloads for accelerator though.  This is good, but the method of dealing with the issue still stands as a valuable way of building web applications.  You can read a little bit more about <a href="http://radar.oreilly.com/archives/2005/05/google_web_acce_1.html" rel="nofollow">the difference between get and post and how it relates to accelerator on the oreilly blog</a>.
+    date_gmt: 2005-05-17 14:19:20 -04:00
+    author_email: timothycrowe@gmail.com
+    author_url: http://
+  - author: mike
+    date: 2005-05-20 14:05:05 -04:00
+    id: 968
+    content: "Think I'll go read about monkeys or something.\r\n\
+      \r\n\
+      Wasnt this same problem a lesson learned like 8 years ago... I dont remember who it was...maybe netscape.\r\n\
+      \r\n\
+      You could make every link on the page a from.  The JS-ing would be fun.  They have QA tools that will parse forms, links in JS and flash and image maps (what ever happened to those :). Gurgle could have added the capabilities for smarter link at  any time.  At that  point I think there's an easier way...for developers to block crap AND for google to improve the hci. a simple on/off toggle would help when your accessing your secure web app.   It is secure isnt it?\r\n\
+      \r\n\
+      Furthermore, I think this is a larger conspiracy than ad words. The plan was to release a form-completion component so that when you land on amazon, you auto-buy everything.  How much fun would that be?  <a href=\"tmcm.com\">Too much coffee....time to settle down</a>. "
+    date_gmt: 2005-05-20 19:05:05 -04:00
+    author_email: zaleksim@gmail.com
+    author_url: ""
+  count: 5
+  show: false
+title: Dealing with the failout of Google Web Accelerator
+published: false
+
+---
+
+<p>I've written many times that I would sell my soul to google in an instant to work there.  Yahoo too for that matter but thats beside the point.  Recently Google released <a href="http://webaccelerator.google.com/">Web Accelerator</a>.  Basically, while you are reading a website, it secretly clicks every link on the page and downloads all your possibilities ahead of time.  Then when you actually click on the page, its already on your computer.  Simple enough concept, the problem is that it teared web applications to shreads.  <a href="http://37signals.com/svn/archives2/google_web_accelerator_hey_not_so_fast_an_alert_for_web_app_designers.php">37 signals reports</a> that it will cick all the links on the site, even the delete links on web applications, ignoring confirmation messages and effectively remove all the data from a web app.  At this point if you have no interest in web development, you may want to check out <a href="http://www.monkeywire.org/">some news about monkeys or something</a>.</p>
+<p>So when you are building an application and you want to add a delete link you might make the link something like this...</p>
+<code>&lt;a href=&quot;/code/deleting/actions.php?action=delete&amp;entry=17&quot;&gt;delete&lt;/a&gt;</code>
+<p>Then when you click the link, it will go to the page which is programmed to delete the entry 17.  Simple enough.</p>
+<p>This is the quick and easy way.  I have on occasion dealt with this in what I see as a better more appropriate way.  I use a form instead of a link.  My code ends up looking like this...</p>
+<code>&lt;form action=&quot;/code/deleting/actions.php&quot; method=&quot;post&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;input type=&quot;hidden&quot; name=&quot;entry&quot; value=&quot;17&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;input type=&quot;submit&quot; name=&quot;action&quot; value=&quot;delete&quot;&gt;
+&lt;/form&gt;</code>
+<p>This code will achieve the same thing as the link above but I believe is more secure and won't allow things like spiders and web accelerators to hump your applications to death.</p>
+

@@ -1,0 +1,267 @@
+--- 
+slug: brian-s-awesome-dynamic-image-resizing-with-php-and-mod-rewrite
+wordpress: 
+  guid: http://veryraw.com/history/2005/03/image-resizing-with-php/
+  date: 2005-03-18 15:44:17 -05:00
+  id: 106
+  date_gmt: 2005-03-18 20:44:17 -05:00
+  categories: 
+  - slug: nerdery
+    title: Nerdery
+    id: 13
+  - slug: imagemanipulation
+    title: Image manipulation
+    id: 21
+  status: publish
+category: veryraw
+layout: archive
+comments: 
+  list: 
+  - author: Mac
+    date: 2005-03-20 11:32:50 -05:00
+    id: 353
+    content: "Thanks for listing your improvements!  I have been trying to accomplish some of this myself for the photo site I just put up.  "
+    date_gmt: 2005-03-20 16:32:50 -05:00
+    author_email: brian.mcelaney@gmail.com
+    author_url: http://www.mcelaney.com
+  - author: Trent
+    date: 2005-03-21 13:17:33 -05:00
+    id: 363
+    content: |
+      Very nice. My only suggestion for improvement would be to add a resize cache so that you don't have to resize the image every time -- only when the image is newer than the cached image. I have no idea how my suggestions will format to your site after I post this comment, so bear with me ;)
+      
+      Here's the code:
+      
+      remove line 38 - (your header() declaration).
+      to line 27 add the following:
+      //first check cache
+      $resized = 'cache/'.$tn_width.'x'.$tn_height.'-'.$image; //cache must be world-readable
+      $imageModified = @filemtime($image);
+      $thumbModified = @filemtime($resized);
+      
+      header(\"Content-type: image/jpeg\"); //move the header() up to here.
+      
+      /* if thumbnail is newer than image then output cached thumbnail and exit */
+      if($imageModified&lt;$thumbModified) { 
+      	header("Last-Modified: ".gmdate("D, d M Y H:i:s",$thumbModified)." GMT");
+      	readfile($resized);
+      	exit;
+      }
+      
+      Then, after the line that reads:
+      
+      ImageJpeg($dst, null, -1);'
+      
+      Add the following:
+      
+      ImageJpeg($dst, $resized, -1); //write the thumbnail to the cache as well...
+
+    date_gmt: 2005-03-21 18:17:33 -05:00
+    author_email: mail@trentdavies.com
+    author_url: http://ad.hominem.org
+  - author: jim
+    date: 2005-06-27 16:13:23 -04:00
+    id: 1055
+    content: |-
+      line 35: header(\"Content-type: image/jpeg\");
+      
+      should read: header("\Content-type: image/jpeg\");
+      
+      if i'm not mistaken.
+      
+      peace,
+      jim
+    date_gmt: 2005-06-27 21:13:23 -04:00
+    author_email: jrevillini@txcc.commnet.edu
+    author_url: ""
+  - author: jim
+    date: 2005-06-27 16:39:27 -04:00
+    id: 1056
+    content: |
+      well this is cool.  i _was_ mistaken.  line 35 should be:
+      header("Content-type: image/jpeg");
+      
+      and while i'm at it, line 39 should be:
+      header("Last-Modified: ".gmdate("D, d M Y H:i:s",$thumbModified)." GMT");
+      
+      also, my images and php script needed to be in a subdirectory of the site for development purposes, so here are the changes needed to get it running in a subdirectory.
+      
+      let's say you have http://domain.com, but you're working on a new site in the /new/ subdirectory.  furthermore, your images exist in the /new/images/ subdirectory.  here is one way to set it up:
+      
+      1. .htaccess notes
+         - put .htaccess into /new/images/
+         - the rewriterule 's should be more like this:
+           RewriteRule ^small/([A-Za-z0-9]+)\.(jpg|gif|png)$ /new/resizer.php?max_width=50&amp;image=images\/$1\.$2
+      
+      2. resizer script
+         - save the php code to a file such as /new/resizer.php
+         - make the code modifications i listed above
+      
+      3. testing - put an image into /new/images/, then point your browser to http://domain.com/new/images/small/testimagename.jpg
+
+    date_gmt: 2005-06-27 21:39:27 -04:00
+    author_email: jrevillini@txcc.commnet.edu
+    author_url: ""
+  - author: jim revillini
+    date: 2005-07-01 00:21:00 -04:00
+    id: 1062
+    content: ok, i have some more modifications, but they're lengthy, so if the owner of this site would like to get in touch, i'll send it along.
+    date_gmt: 2005-07-01 05:21:00 -04:00
+    author_email: james@veganpeople.net
+    author_url: ""
+  count: 5
+  show: false
+title: Brian's awesome dynamic image resizing with PHP and mod_rewrite
+published: false
+
+---
+
+<p><a href="#updated">This entry has been updated</a>.</p>
+<p>When I did <a href="http://veryraw.com/history/2005/02/a-little-redesign-action/">my recent redesign</a>, I found that the best thing I had done in my original design was dynamic image resizing.  I could upload my images all resized and upload thumbnails for them too, but when I redesigned and wanted the images to be larger or smaller I would have wasted my time.</p>
+<p>With a little help from <a href="http://us2.php.net/manual/en/ref.image.php">PHP's image functions</a> and <a href="http://www.modrewrite.com/">mod_rewrite</a> we can make image resizing really easy.
+<h4>The htaccess file</h4>
+</p><p>First we use mod_rewrite to interpret the URL and decide how large to set the maximum width. If I give the actual URL it will just give the original image.  By adding a false directory to the URL (I've chosen small, medium, large) the htaccess file will rewrite the URL and ship the request off to the resizing script.</p>
+<pre>
+<textarea rows="10" cols="50">
+RewriteEngine on
+RewriteBase /
+# scaling small, medium, large
+RewriteRule ^small/([A-Za-z0-9]+)\.(jpg|gif|png)$ index.php?max_width=100&image=$1\.$2
+RewriteRule ^medium/([A-Za-z0-9]+)\.(jpg|gif|png)$ index.php?max_width=200&image=$1\.$2
+RewriteRule ^large/([A-Za-z0-9]+)\.(jpg|gif|png)$ index.php?max_width=300&image=$1\.$2
+
+</textarea>
+</pre>
+<h4>The resize script</h4>
+<p>The meat of the process is here.  Some logic to figure out the proper dimensions and scale the image.  The the image functions.</p>
+<pre>
+<textarea rows="10" cols="50">
+
+// max_width and image variables are sent by htaccess
+
+$max_height = 1000;
+
+$size = GetImageSize($image);
+$width = $size[0];
+$height = $size[1];
+
+// get the ratio needed
+$x_ratio = $max_width / $width;
+$y_ratio = $max_height / $height;
+
+// if image allready meets criteria, load current values in
+// if not, use ratios to load new size info
+if ( ($width < = $max_width) && ($height <= $max_height) ) {
+  $tn_width = $width;
+  $tn_height = $height;
+} else if (($x_ratio * $height) < $max_height) {
+  $tn_height = ceil($x_ratio * $height);
+  $tn_width = $max_width;
+} else {
+  $tn_width = ceil($y_ratio * $width);
+  $tn_height = $max_height;
+}
+
+// read image
+$src = ImageCreateFromJpeg($image);
+
+// set up canvas
+$dst = imagecreatetruecolor($tn_width,$tn_height);
+
+// copy resized image to new canvas
+ImageCopyResized($dst, $src, 0, 0, 0, 0, $tn_width,$tn_height,$width,$height);
+
+// send the header and new image
+header("Content-type: image/jpeg");
+ImageJpeg($dst, null, -1);
+
+// clear out the resources
+ImageDestroy($src);
+ImageDestroy($dst);
+
+
+</textarea>
+</textarea></pre>
+<p>Together you get the ability to have a whole lot of image size possibilities while maintaining the original image size.</p>
+<p><strong>http://veryraw.com/code/imageresize/small/feet.jpg</strong></p>
+<p><img src="http://veryraw.com/code/imageresize/small/feet.jpg" /></p>
+<p><strong>http://veryraw.com/code/imageresize/medium/feet.jpg</strong></p>
+<p><img src="http://veryraw.com/code/imageresize/medium/feet.jpg" /></p>
+<p><strong>http://veryraw.com/code/imageresize/large/feet.jpg</strong></p>
+<p><img src="http://veryraw.com/code/imageresize/large/feet.jpg" /></p>
+<p><strong>http://veryraw.com/code/imageresize/feet.jpg</strong></p>
+<p><img src="http://veryraw.com/code/imageresize/feet.jpg" /></p>
+<p>Feel free to take it, modify it and send me any improvements you make.</p>
+<p>I must mention that the original version of this was sent to me two years ago by <a href="http://macweblog.blogspot.com/">Brian</a>.  I have since modified it about a thousand times and I am using it in a thousand different ways. Thanks Brian for introducing me to PHP image functions.</p>
+<h3 id="updated">The Update</h3>
+<p><a href="http://ad.hominem.org/">Trent</a> the new visitor has given me some great feedback on my script. He posted the code below but it was mangled.  So here it is. </p>
+<p>We ditch a few lines of the script I gave and add a few others.  The new script creates a cache of the image at the new size and saves it in a directory within the image directory.  This may not be huge for a the meager amount of hits I receive each day but if you get anything sizable or perhaps if I was doing this professionally for a site that gets say... 10,000 hits a day, this could save precious processor time. You need to have a cache directory for this to work and the cache directory must be visible to the world.  Here's the code.  Thanks Trent!</p>
+
+<pre>
+<textarea rows="10" cols="50">
+
+	
+// max_width and image variables are sent by htaccess
+	
+$max_height = 1000;
+	
+$size = GetImageSize($image);
+$width = $size[0];
+$height = $size[1];
+	
+// get the ratio needed
+$x_ratio = $max_width / $width;
+$y_ratio = $max_height / $height;
+	
+// if image allready meets criteria, load current values in
+// if not, use ratios to load new size info
+if ( ($width < = $max_width) && ($height <= $max_height) ) {
+  $tn_width = $width;
+  $tn_height = $height;
+} else if (($x_ratio * $height) < $max_height) {
+  $tn_height = ceil($x_ratio * $height);
+  $tn_width = $max_width;
+} else {
+  $tn_width = ceil($y_ratio * $width);
+  $tn_height = $max_height;
+}
+
+/* Additions by Trent Davies */
+//first check cache
+//cache must be world-readable
+$resized = 'cache/'.$tn_width.'x'.$tn_height.'-'.$image;
+$imageModified = @filemtime($image);
+$thumbModified = @filemtime($resized);
+
+header("Content-type: image/jpeg");
+
+//if thumbnail is newer than image then output cached thumbnail and exit
+if($imageModified<$thumbModified) { 
+	header("Last-Modified: ".gmdate("D, d M Y H:i:s",$thumbModified)." GMT");
+	readfile($resized);
+	exit;
+}
+/* End of additions, except for line 54 (commented out) and line 56 */
+	
+// read image
+$src = ImageCreateFromJpeg($image);
+	
+// set up canvas
+$dst = imagecreatetruecolor($tn_width,$tn_height);
+	
+// copy resized image to new canvas
+ImageCopyResized($dst, $src, 0, 0, 0, 0, $tn_width,$tn_height,$width,$height);
+	
+// send the header and new image
+//header(\"Content-type: image/jpeg\");
+ImageJpeg($dst, null, -1);
+ImageJpeg($dst, $resized, -1);//write the thumbnail to cache as well...
+	
+// clear out the resources
+ImageDestroy($src);
+ImageDestroy($dst);
+	
+
+</textarea>
+</textarea></pre>
+

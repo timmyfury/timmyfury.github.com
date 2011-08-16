@@ -1,0 +1,35 @@
+--- 
+slug: choose-your-charset-wisely
+wordpress: 
+  guid: http://veryraw.com/history/2005/05/140/
+  date: 2005-05-02 12:10:06 -04:00
+  id: 140
+  date_gmt: 2005-05-02 17:10:06 -04:00
+  categories: 
+  - slug: web-development
+    title: Web development
+    id: 22
+  status: publish
+category: veryraw
+layout: archive
+comments: 
+  list: 
+  count: 0
+  show: false
+title: Choose your charset wisely.
+published: false
+
+---
+
+<p>Recently at dccc.edu we suddenly started having a problem where the curling quotes, apostrophes, em dashes were appearing as question marks.  I couldn't figure out for the life of me what it was.  It's not the first time I had run into this problem and I knew the root of it was in the fact that that some of the content is copied from Microsoft Word and pasted directly into ZOPE (our CMS) and saved to the site.  The fact that this suddenly started happening had me even more confused. </p>
+<p>Last night I was reading <a href="http://www.amazon.com/exec/obidos/ASIN/0321303474/mezzoblue-20/102-1829308-9192157">The Zen of CSS Design</a> and came onto the bit about character sets and it clicked.  A few weeks ago I was checking how the site did in a validation.  This is very close to impossible based on the size of the site and the number of people who are maintaining content.  I do the best I can and check every now and then.  Well at some point I lost the charset information in the meta data of the site.  I wen to veryraw and copied the charset information and pasted it into the header of dccc.edu.  Here is where the problem began.</p>
+<p>This site uses <code>text/html; charset=utf-8</code>,  dccc.edu uses <code>text/html; charset=ISO-8859-1</code>.  The differences are not all that extreme.  Though utf-8 does not accomodate curly quotes, em dashes or curly apostrophes.  Ideally we should be using HTML entities for these anyway.  Changed the charset and the problem is solved.</p>
+<p>Moral of the story is 'If you have alot of people copying from Microsoft word onto the web, use charset ISO-8859-1'.  Thats one to teach the kids at bedtime. 
+
+<h3>further resources</h3>
+<ul>
+<li><a href="http://www.dwheeler.com/essays/quotes-in-html.html">Curling Quotes in HTML, SGML, and XML</a></li>
+<li><a href="http://www.rossde.com/malaprops/writing_internet.html">Writing for the internet</a></li>
+<li><a href="http://www.douggreenconsulting.com/articles/htmlamp.php">HTML Character References, HTML Entity Names, HTML Ampersand Escape Codes</a></li>
+<li><a href="http://webstandards.org/learn/askw3c/dec2002.html">Specifying Character Encoding</a></li></ul></p>
+

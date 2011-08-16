@@ -1,0 +1,35 @@
+--- 
+slug: dealing-with-comment-spam-on-wordpress
+wordpress: 
+  guid: http://veryraw.com/history/2006/06/dealing-with-comment-spam-on-wordpress/
+  date: 2006-06-09 12:31:12 -04:00
+  id: 346
+  date_gmt: 2006-06-09 17:31:12 -04:00
+  categories: 
+  - slug: the-site
+    title: The site
+    id: 8
+  - slug: annoyances
+    title: Annoyances
+    id: 15
+  status: publish
+category: veryraw
+layout: archive
+comments: 
+  list: 
+  count: 0
+  show: false
+title: Dealing with comment spam on Wordpress.
+published: false
+
+---
+
+<p>Over the last few months, in addition to not posting very much, I have been receiving anywhere from 30-100 comment spam a day on veryraw.  It has been infuriating and has reenforced the fact that spammers will one day rot in hell.  I noticed a pattern a little while ago though that helped me alleviate the problem a little bit.  I found that the spam was hitting (for the most part) entries older then 4 months.  So I added this bit of code to the top of my header template.</p>
+<code>
+&lt;?php
+	$turn_off = "UPDATE wp_posts SET comment_status = 'closed' WHERE post_date < (CURRENT_TIMESTAMP - INTERVAL 4 MONTH) AND comment_status = 'open'";
+	mysql_query($turn_off);
+?&gt;
+</code>
+<p>This turns off all comments for entries older than four months old.  It's not the most efficient means of achieving the desired effect, since it runs every time the page loads but it works.  In the days since I made this mod I have received a total of 3 spam in one week.</p></code>
+
