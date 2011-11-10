@@ -185,8 +185,6 @@ section h2 a:visited,
 section h3 a:visited,
 section h4 a:visited {
 	color: #333;
-/*	background: url('./anchor.png') right center no-repeat;*/
-/*	padding-right: 1.2em;*/
 	text-decoration: none;
 }
 
