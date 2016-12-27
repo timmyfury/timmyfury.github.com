@@ -1,59 +1,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Tim Crowe{% if page.summary %} - {{page.summary}}{% endif %}</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="{% if page.summary %}{{page.summary}}{% endif %}" />
-	<meta name="keywords" content="tim crowe, timmyfury, timmy fury, programming, web development, cooking{% if page.keywords %}, {{page.keywords}}{% endif %}" />
-	<meta name="DC.creator" content="Tim Crowe - http://timmyfury.com" />
-	<meta name="DC.publisher" content="Tim Crowe" />
-	<meta name="DC.language" content="en" />
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Tim Crowe{% if page.summary %} - {{page.summary}}{% endif %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="{% if page.summary %}{{page.summary}}{% endif %}" />
+    <meta name="keywords" content="tim crowe, timmyfury, timmy fury, programming, web development, cooking{% if page.keywords %}, {{page.keywords}}{% endif %}" />
+    <meta name="DC.creator" content="Tim Crowe - http://timmyfury.com" />
+    <meta name="DC.publisher" content="Tim Crowe" />
+    <meta name="DC.language" content="en" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="apple-touch-icon" href="apple-touch-icon.png" />
-	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
-	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
-	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
 
-	<link type="text/css" rel="stylesheet" href="/c/screen.css" media="screen, projection" />
-	<link type="text/css" rel="stylesheet" href="/c/print.css" media="print" />
+    <link type="text/css" rel="stylesheet" href="/c/screen.css" media="screen, projection" />
+    <link type="text/css" rel="stylesheet" href="/c/print.css" media="print" />
 </head>
 <body>
-	<div id="header">
-		<div class="section">
-			<h1>{% if page.title %}{{ page.title }}{% else %}timmyfury{% endif %}</h1>
-		</div>
-	</div>
+    <div id="header">
+        <div class="section">
+            <h1>{% if page.title %}{{ page.title }}{% else %}timmyfury{% endif %}</h1>
+        </div>
+    </div>
 
-	<div id="summary">
-		<div class="section">
-		{% if page.summary %}
-			<h2>{{ page.summary }}</h2>
-		{% endif %}
-		</div>
-	</div>
-	
-	<div id="content">
-		{{ content }}
-	</div>
-	
-	
-	<div id="footer">
-		<div class="section">
-			<p>&copy; 2010 It's all mine bitches</p>
-		</div>
-	</div>
-	
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-9639324-1']);
-		_gaq.push(['_trackPageview']);
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
+    <div id="summary">
+        <div class="section">
+        {% if page.summary %}
+            <h2>{{ page.summary }}</h2>
+        {% endif %}
+        </div>
+    </div>
+    
+    <div id="content">
+        {{ content }}
+    </div>
+    
+    
+    <div id="footer">
+        <div class="section">
+
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-9639324-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
 </body>
 </html>
